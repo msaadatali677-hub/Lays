@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lay's – Premium Chips &amp; Snacks | Better Made to Share</title>
+  <meta name="description" content="Explore Lay's potato chips flavours — Classic, Salt &amp; Vinegar, Barbecue, Sour Cream &amp; Onion, Masala and Cheese. Frontend concept demo with a working cart, wishlist and quick view." />
+  <meta name="theme-color" content="#FFD500" />
+  <meta property="og:title" content="Lay's – Premium Chips &amp; Snacks" />
+  <meta property="og:description" content="Better made to share. Browse flavours, add snacks to your cart and explore offers (frontend concept demo)." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head><body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar neu" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Lay's home">
+        <span class="logo-chip" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+        <span class="logo-text">Lay's</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
+        <li><a href="#flavors" class="nav-link" data-section="flavors">Flavors</a></li>
+        <li><a href="#offers" class="nav-link" data-section="offers">Offers</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="searchToggle" aria-label="Search products" aria-expanded="false" aria-controls="searchPanel"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+        <button type="button" class="icon-btn" id="wishToggle" aria-label="Open wishlist"><i class="fa-solid fa-heart" aria-hidden="true"></i><span class="badge-count" id="wishCount" hidden>0</span></button>
+        <button type="button" class="icon-btn" id="cartToggle" aria-label="Open shopping cart"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><span class="badge-count" id="cartCount" hidden>0</span></button>
+        <button type="button" class="icon-btn hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <div class="search-panel neu" id="searchPanel" hidden>
+      <form role="search" id="searchForm" class="search-form">
+        <label for="searchInput" class="sr-only">Search products</label>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="searchInput" placeholder="Search flavours, e.g. masala, cheese…" autocomplete="off" />
+        <button type="button" class="icon-btn icon-btn-sm" id="searchClose" aria-label="Close search"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-card">
+        <span class="deco deco-ring" aria-hidden="true"></span>
+        <span class="deco deco-dot d1" aria-hidden="true"></span>
+        <span class="deco deco-dot d2" aria-hidden="true"></span>
+        <span class="deco deco-blob" aria-hidden="true"></span>
+
+        <div class="hero-content">
+          <p class="eyebrow hero-anim"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Concept demo · Sample collection</p>
+          <h1 id="hero-title" class="hero-anim">BETTER MADE <span>TO SHARE.</span></h1>
+          <p class="hero-text hero-anim">Discover the irresistible taste of Lay's. Every crunch brings happiness, flavor, and unforgettable moments.</p>
+          <div class="hero-buttons hero-anim">
+            <a href="#products" class="btn btn-primary btn-lg" data-scroll>Explore Products <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#flavors" class="btn btn-light btn-lg" data-scroll>Discover Flavors</a>
+          </div>
+          <ul class="hero-points hero-anim">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 6 flavours</li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Made for sharing</li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Prices in PKR (sample)</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" id="heroVisual">
+          <div class="hero-bag hero-bag-side left" id="heroBagL"></div>
+          <div class="hero-bag hero-bag-main" id="heroBagMain"></div>
+          <div class="hero-bag hero-bag-side right" id="heroBagR"></div>
+          <span class="float-chip c1" aria-hidden="true"></span>
+          <span class="float-chip c2" aria-hidden="true"></span>
+          <span class="float-chip c3" aria-hidden="true"></span>
+          <span class="float-chip c4" aria-hidden="true"></span>
+          <span class="float-chip c5" aria-hidden="true"></span>
+          <span class="float-chip c6" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURED PRODUCTS ===================== -->
+    <section class="section container" id="products" aria-labelledby="products-title">
+      <header class="section-head reveal">
+        <p class="eyebrow eyebrow-red">Featured products</p>
+        <h2 id="products-title">Pick Your Crunch</h2>
+        <p class="section-sub">Sample products and prices shown for demonstration. Illustrations are original artwork, not real packaging photos.</p>
+      </header>
+
+      <div class="toolbar reveal">
+        <div class="chips" id="categoryChips" role="group" aria-label="Filter by flavour category"></div>
+        <div class="toolbar-right">
+          <label class="search-inline neu-inset" for="productSearch">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" id="productSearch" placeholder="Search products" autocomplete="off" />
+          </label>
+          <label class="select-wrap neu-inset" for="sortSelect">
+            <span class="sr-only">Sort products</span>
+            <select id="sortSelect">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <p class="results-info" id="resultsInfo" aria-live="polite"></p>
+
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state neu" id="noResults" hidden>
+        <i class="fa-solid fa-face-sad-tear" aria-hidden="true"></i>
+        <h3>No snacks found</h3>
+        <p>Try a different search or category.</p>
+        <button type="button" class="btn btn-primary" id="resetFilters">Reset filters</button>
+      </div>
+    </section>
+
+    <!-- ===================== FLAVORS ===================== -->
+    <section class="section flavors-section" id="flavors" aria-labelledby="flavors-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-red">Explore flavors</p>
+          <h2 id="flavors-title">Find Your Flavor</h2>
+          <p class="section-sub">From classic and tangy to bold and spicy — swipe through the collection.</p>
+        </header>
+        <div class="swiper flavor-swiper reveal" id="flavorSwiper">
+          <div class="swiper-wrapper" id="flavorWrapper"></div>
+          <div class="swiper-pagination"></div>
+          <button type="button" class="icon-btn swiper-btn flavor-prev" aria-label="Previous flavours"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+          <button type="button" class="icon-btn swiper-btn flavor-next" aria-label="Next flavours"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section container about" id="about" aria-labelledby="about-title">
+      <div class="about-visual reveal" aria-hidden="true">
+        <div class="about-disc neu">
+          <div class="about-bags" id="aboutBags"></div>
+        </div>
+        <span class="float-chip about-chip a1"></span>
+        <span class="float-chip about-chip a2"></span>
+        <span class="float-chip about-chip a3"></span>
+      </div>
+      <div class="about-content reveal">
+        <p class="eyebrow eyebrow-red">About Lay's</p>
+        <h2 id="about-title">EVERY BITE BRINGS A SMILE.</h2>
+        <p>Lay's is a snack brand loved around the world, known for golden, crispy potato chips and a flavour for every mood. Whether it's a quiet moment on your own or a big get-together with friends, Lay's is made to be opened, shared and enjoyed.</p>
+        <p>This website is an independent concept demo that imagines a premium online snack shop — a place to browse flavours, build a snack box and share the joy of a good crunch.</p>
+        <button type="button" class="btn btn-primary" id="learnMore">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE ===================== -->
+    <section class="section container" id="why" aria-labelledby="why-title">
+      <header class="section-head reveal">
+        <p class="eyebrow eyebrow-red">Why choose Lay's?</p>
+        <h2 id="why-title">Made for Moments</h2>
+      </header>
+      <div class="feature-grid">
+        <article class="feature-card neu reveal">
+          <div class="feature-icon neu-inset"><i class="fa-solid fa-face-smile-beam" aria-hidden="true"></i></div>
+          <h3>Delicious Taste</h3>
+          <p>Golden, crispy chips with flavours designed to put a smile on your face.</p>
+        </article>
+        <article class="feature-card neu reveal">
+          <div class="feature-icon neu-inset"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+          <h3>Quality Ingredients</h3>
+          <p>Carefully chosen ingredients and a commitment to a consistently great crunch.</p>
+        </article>
+        <article class="feature-card neu reveal">
+          <div class="feature-icon neu-inset"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+          <h3>Perfect for Sharing</h3>
+          <p>Bring a pack to the party, the picnic or the movie night — better together.</p>
+        </article>
+        <article class="feature-card neu reveal">
+          <div class="feature-icon neu-inset"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+          <h3>Variety of Flavors</h3>
+          <p>Classic, tangy, smoky, creamy or spicy — there's a flavour for every craving.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== OFFERS ===================== -->
+    <section class="section container" id="offers" aria-labelledby="offers-title">
+      <header class="section-head reveal">
+        <p class="eyebrow eyebrow-red">Special offers</p>
+        <h2 id="offers-title">Snack Deals &amp; Bundles</h2>
+        <p class="section-sub">Sample discounts for demonstration purposes only.</p>
+      </header>
+
+      <div class="offer-top">
+        <article class="offer-banner banner-red reveal">
+          <span class="deco deco-dot d3" aria-hidden="true"></span>
+          <p class="banner-tag">Flavor Fest · Sample offer</p>
+          <h3>Save up to 16% on snack bundles</h3>
+          <p>Mix, match and share. Free delivery on sample orders over Rs. 1,000.</p>
+          <button type="button" class="btn btn-yellow" data-offer="bundles">Shop Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </article>
+        <article class="offer-banner banner-yellow reveal">
+          <p class="banner-tag">Spice Week · Sample offer</p>
+          <h3>Turn up the heat with Masala</h3>
+          <p>Bold, warm and zesty — now at a sample sale price.</p>
+          <button type="button" class="btn btn-primary" data-offer="cat-spicy">Shop Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </article>
+      </div>
+
+      <h3 class="subheading reveal">Featured deals</h3>
+      <div class="sale-grid" id="saleGrid"></div>
+
+      <h3 class="subheading reveal" id="bundlesHeading">Snack bundles</h3>
+      <div class="bundle-grid" id="bundleGrid"></div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow-red">Customer reviews</p>
+          <h2 id="reviews-title">Loved by Snack Fans</h2>
+          <p class="section-sub"><strong>Sample demonstration content</strong> — these names and reviews are fictional.</p>
+        </header>
+        <div class="swiper review-swiper reveal" id="reviewSwiper">
+          <div class="swiper-wrapper" id="reviewWrapper"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NEWSLETTER ===================== -->
+    <section class="section container" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="newsletter-card reveal">
+        <span class="deco deco-ring ring-sm" aria-hidden="true"></span>
+        <div class="newsletter-text">
+          <h2 id="newsletter-title">STAY IN THE LOOP!</h2>
+          <p>Get updates about new flavors, exciting products and special offers.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <div class="field">
+            <label for="emailInput">Email address</label>
+            <div class="input-row">
+              <input type="email" id="emailInput" name="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="newsletterMsg" />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <p class="form-msg" id="newsletterMsg" role="status" aria-live="polite"></p>
+          </div>
+          <p class="fineprint">Demo only — your email is not stored or sent anywhere.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Lay's home">
+          <span class="logo-chip" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+          <span class="logo-text">Lay's</span>
+        </a>
+        <p>Golden, crispy and made to share. An independent concept demo of a premium snack shop.</p>
+        <div class="socials">
+          <button type="button" class="icon-btn" data-demo-link aria-label="Facebook (demo link)"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></button>
+          <button type="button" class="icon-btn" data-demo-link aria-label="Instagram (demo link)"><i class="fa-brands fa-instagram" aria-hidden="true"></i></button>
+          <button type="button" class="icon-btn" data-demo-link aria-label="X / Twitter (demo link)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></button>
+          <button type="button" class="icon-btn" data-demo-link aria-label="YouTube (demo link)"><i class="fa-brands fa-youtube" aria-hidden="true"></i></button>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home" data-scroll>Home</a></li>
+          <li><a href="#about" data-scroll>About</a></li>
+          <li><a href="#products" data-scroll>Products</a></li>
+          <li><a href="#flavors" data-scroll>Flavors</a></li>
+          <li><a href="#offers" data-scroll>Offers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Product categories">
+        <h3>Categories</h3>
+        <ul>
+          <li><button type="button" class="link-btn" data-cat="classic">Classic</button></li>
+          <li><button type="button" class="link-btn" data-cat="tangy">Tangy</button></li>
+          <li><button type="button" class="link-btn" data-cat="savory">Savory</button></li>
+          <li><button type="button" class="link-btn" data-cat="spicy">Spicy</button></li>
+          <li><button type="button" class="link-btn" data-cat="creamy">Creamy</button></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <address>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Sample Street, City, Country</p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> +00 000 0000000</p>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> hello@example.com</p>
+        </address>
+        <p class="fineprint">Contact details are placeholders.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Lay's concept demo. All rights reserved by their respective owners.</p>
+      <p class="disclaimer">Unofficial student/portfolio concept — not affiliated with or endorsed by Lay's or PepsiCo. Products, prices and reviews are sample content.</p>
+      <ul class="legal">
+        <li><button type="button" class="link-btn" data-info="privacy">Privacy Policy</button></li>
+        <li><button type="button" class="link-btn" data-info="terms">Terms &amp; Conditions</button></li> 
+        
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ===================== DRAWERS ===================== -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="drawer neu" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true" tabindex="-1">
+    <header class="drawer-head">
+      <h2>Your Cart</h2>
+      <button type="button" class="icon-btn icon-btn-sm" data-close aria-label="Close cart"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </header>
+    <div class="drawer-body">
+      <div class="drawer-empty" id="cartEmpty">
+        <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+        <p>Your cart is empty.</p>
+        <button type="button" class="btn btn-primary btn-sm" data-close data-goto="products">Browse snacks</button>
+      </div>
+      <ul class="cart-list" id="cartList"></ul>
+    </div>
+    <footer class="drawer-foot" id="cartFooter" hidden>
+      <div class="ship-progress"><p id="freeShipHint"></p><div class="bar neu-inset"><span id="freeShipBar"></span></div></div>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="cartSubtotal">Rs. 0</dd></div>
+        <div><dt>Delivery</dt><dd id="cartDelivery">Rs. 0</dd></div>
+        <div class="grand"><dt>Total</dt><dd id="cartTotal">Rs. 0</dd></div>
+      </dl>
+      <button type="button" class="btn btn-primary btn-block" id="checkoutBtn">Checkout (demo)</button>
+      <button type="button" class="link-btn center" id="clearCartBtn">Clear cart</button>
+    </footer>
+  </aside>
+
+  <aside class="drawer neu" id="wishDrawer" aria-label="Wishlist" aria-hidden="true" tabindex="-1">
+    <header class="drawer-head">
+      <h2>Your Wishlist</h2>
+      <button type="button" class="icon-btn icon-btn-sm" data-close aria-label="Close wishlist"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </header>
+    <div class="drawer-body">
+      <div class="drawer-empty" id="wishEmpty">
+        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+        <p>No favourites yet. Tap the heart on a product to save it.</p>
+      </div>
+      <ul class="cart-list" id="wishList"></ul>
+    </div>
+  </aside>
+
+  <!-- ===================== MODALS ===================== -->
+  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-labelledby="qvTitle" hidden>
+    <div class="modal-dialog neu">
+      <button type="button" class="icon-btn icon-btn-sm modal-close" data-close aria-label="Close quick view"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="qv-body" id="qvBody"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" hidden>
+    <div class="modal-dialog neu modal-sm">
+      <button type="button" class="icon-btn icon-btn-sm modal-close" data-close aria-label="Close dialog"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <h2 id="infoTitle"></h2>
+      <div class="info-body" id="infoBody"></div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/script.js"></script>
+  <div class="footer-content">
+    <p>Developed by <a href="https://www.linkedin.com/in/m-saadat-ali-3021ab3a5" target="_blank" rel="noopener noreferrer"><b><i><u>  M. Saadat Ali</u></i></b></a></p>
+  </div>
+</body>
+</html>
